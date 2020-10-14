@@ -1,0 +1,36 @@
+[{
+    "categoryId": "0",
+    "categoryName": "Meyve",
+    "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+},
+{
+    "categoryId": "1",
+    "categoryName": "Sebze",
+    "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+},
+
+{
+    "categoryId": "2",
+    "categoryName": "Temel Gıda",
+    "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+},
+
+{
+    "categoryId": "3",
+    "categoryName": "İçecek",
+    "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+},
+
+{
+    "categoryId": "4",
+    "categoryName": "Atıştırmalık",
+    "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+},
+
+{
+    "categoryId": "5",
+    "categoryName": "Temizlik",
+    "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+}
+
+]

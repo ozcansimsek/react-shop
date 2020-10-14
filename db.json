@@ -1,0 +1,73 @@
+{
+  "products": [
+    {
+      "id": "0",
+      "productName": "Domates",
+      "category": "Sebze",
+      "price": 5,
+      "image": "https://www.boltonmarkets.com/bolton-markets/images/intro_cream_of_crop_300x300.jpg"
+    },
+    {
+      "id": "1",
+      "productName": "Salatalık",
+      "category": "Sebze",
+      "price": 3,
+      "image": "https://www.boltonmarkets.com/bolton-markets/images/intro_cream_of_crop_300x300.jpg"
+    },
+    {
+      "id": "2",
+      "productName": "Patlıcan",
+      "category": "Sebze",
+      "price": 4,
+      "image": "https://www.boltonmarkets.com/bolton-markets/images/intro_cream_of_crop_300x300.jpg"
+    },
+    {
+      "id": "3",
+      "productName": "Biber",
+      "category": "Sebze",
+      "price": 6,
+      "image": "https://www.boltonmarkets.com/bolton-markets/images/intro_cream_of_crop_300x300.jpg"
+    },
+    {
+      "id": "5",
+      "productName": "Soğan",
+      "category": "Sebze",
+      "price": 2,
+      "image": "https://www.boltonmarkets.com/bolton-markets/images/intro_cream_of_crop_300x300.jpg"
+    },
+    {
+      "id": "6",
+      "productName": "Maydanoz",
+      "category": "Sebze",
+      "price": 2,
+      "image": "https://www.boltonmarkets.com/bolton-markets/images/intro_cream_of_crop_300x300.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": "0",
+      "name": "Meyve",
+      "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+    },
+    {
+      "id": "1",
+      "name": "Sebze",
+      "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Gıda",
+      "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Temizlik",
+      "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+    },
+    {
+      "id": "4",
+      "name": "İçecek",
+      "image": "https://financialtribune.com/sites/default/files/styles/300x300/public/field/image/17january/04-ff-fruit_71-ab.jpg"
+    }
+  ]
+}

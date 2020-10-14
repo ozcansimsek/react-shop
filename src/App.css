@@ -1,6 +1,18 @@
+
 .App {
+  display: flex;
   text-align: center;
+ }
+
+
+
+.products-list, .categories-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
+
 
 .App-logo {
   height: 40vmin;
