@@ -13,7 +13,7 @@ function CartView() {
   };
 
 
-  const openNotificationWithIcon = type => {
+  const openNotificationWithIcon = (type) => {
     notification[type]({
       message: 'Done',
       description:

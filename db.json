@@ -41,6 +41,13 @@
       "category": "Sebze",
       "price": 2,
       "image": "https://www.boltonmarkets.com/bolton-markets/images/intro_cream_of_crop_300x300.jpg"
+    },
+    {
+      "productName": "Elma",
+      "category": "Meyve",
+      "price": 5,
+      "image": "https://www.entazem.com/Uploads/UrunResimleri/buyuk/elma-kirmizi-yaz-f85f.jpg",
+      "id": "WOr5tSj"
     }
   ],
   "categories": [
