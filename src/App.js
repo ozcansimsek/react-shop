@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 import { Layout } from "antd";
 import { CartProvider } from "./Components/CartContext";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 const layoutStyle = {
   width: "85%",
   margin: "auto",

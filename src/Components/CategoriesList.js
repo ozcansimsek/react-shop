@@ -20,7 +20,7 @@ function CategoriesList() {
 
     if (state.display) {
       return (
-        <React.Fragment>
+        <>
           <Link to={categoryLink}>
             <Card
               style={{ width: 200, margin: 15, textAlign: "center" }}
@@ -28,12 +28,12 @@ function CategoriesList() {
               onClick={() => {
                 setState({ display: false });
               }}
-              cover={<img src={item.image} />}
+              cover={<img src={item.image} alt={item.productName} />}
             >
               <h3>{item.name}</h3>
             </Card>
           </Link>
-        </React.Fragment>
+        </>
       );
     } else {
       return (

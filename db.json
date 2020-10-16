@@ -4,7 +4,7 @@
       "id": "0",
       "productName": "Domates",
       "category": "Sebze",
-      "price": 5,
+      "price": 4,
       "image": "https://www.boltonmarkets.com/bolton-markets/images/intro_cream_of_crop_300x300.jpg"
     },
     {
@@ -39,15 +39,22 @@
       "id": "6",
       "productName": "Maydanoz",
       "category": "Sebze",
-      "price": 2,
+      "price": 1,
       "image": "https://www.boltonmarkets.com/bolton-markets/images/intro_cream_of_crop_300x300.jpg"
     },
     {
+      "id": "WOr5tSj",
       "productName": "Elma",
       "category": "Meyve",
-      "price": 5,
-      "image": "https://www.entazem.com/Uploads/UrunResimleri/buyuk/elma-kirmizi-yaz-f85f.jpg",
-      "id": "WOr5tSj"
+      "price": 4,
+      "image": "https://www.entazem.com/Uploads/UrunResimleri/buyuk/elma-kirmizi-yaz-f85f.jpg"
+    },
+    {
+      "id": "y0TJCOt",
+      "productName": "Mandalina",
+      "category": "Meyve",
+      "price": 2,
+      "image": "https://migros-dali-storage-prod.global.ssl.fastly.net/sanalmarket/product/27281001/mandalina-kg-68d84e.jpg"
     }
   ],
   "categories": [

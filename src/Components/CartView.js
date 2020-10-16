@@ -15,7 +15,7 @@ function CartView() {
 
   const openNotificationWithIcon = (type) => {
     notification[type]({
-      message: 'Done',
+      message: 'Done'   ,
       description:
         'Item has been removed successfully.',
       duration: 1,
@@ -29,14 +29,14 @@ function CartView() {
       render: (text, record, index) => index + 1,
     },
     {
-      title: "Img",
+      title: "Product Image",
       dataIndex: "image",
       render: (text, record, index) => (
         <Image src={cart[index].image} width={75} height={75} />
       ),
     },
     {
-      title: "Product",
+      title: "Product Name",
       dataIndex: "name",
     },
     {

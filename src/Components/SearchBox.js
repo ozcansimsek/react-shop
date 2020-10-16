@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Form } from "antd";
+import { Input } from "antd";
 import {
   SearchOutlined
 } from "@ant-design/icons";
@@ -14,7 +14,7 @@ function SearchBox() {
       placeholder="Type to search..."
       enterButton={<SearchOutlined/>}
       size="large"
-      style={{width: 500, alignSelf:"center", marginLeft:"auto"}}
+      style={{width: 450, alignSelf:"center", marginLeft:"auto"}}
       onSearch={(value) => alert(value)}
     />
      );

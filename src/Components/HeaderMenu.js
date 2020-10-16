@@ -11,7 +11,7 @@ import SearchBox from "./SearchBox";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ProductList from "./ProductList";
 import CategoriesList from "./CategoriesList";
-import ManagementMain from "./Management/ManagementMain";
+import ManagementMain from "./Management";
 import Cart from "./Cart";
 import CartView from "./CartView";
 
@@ -37,18 +37,12 @@ function HeaderMenu() {
         <Menu.Item key="home" icon={<HomeOutlined />}>
           <Link to="/">Home</Link>
         </Menu.Item>
-        <Menu.Item key="app" icon={<AppstoreOutlined />}>
+        <Menu.Item key="shop" icon={<AppstoreOutlined />}>
           <Link to="/shop">Shop</Link>
         </Menu.Item>
-        <SubMenu key="SubMenu" icon={<SettingOutlined />} title="Categories">
-          <Menu.ItemGroup title="Gıda">
-            <Menu.Item key="meyve">Meyve</Menu.Item>
-            <Menu.Item key="sebze">Sebze</Menu.Item>
-          </Menu.ItemGroup>
-          <Menu.ItemGroup title="Ev">
-            <Menu.Item key="setting:3">Temizlik</Menu.Item>
-          </Menu.ItemGroup>
-        </SubMenu>
+          <Menu.Item key="category" icon={<SettingOutlined />}>
+              <Link to="/category">Categories</Link>
+          </Menu.Item>
 
         <Menu.Item icon={<PlusOutlined />}>
           <Link to="/management">Management</Link>
@@ -68,6 +62,7 @@ function HeaderMenu() {
 
       <Switch>
         <Route exact path="/cart" component={CartView}></Route>
+        <Route path="/category" component={CategoriesList}></Route>
         <Route exact path="/shop" component={ProductList}></Route>
         <Route exact path="/management" component={ManagementMain}></Route>
         <Route path="/" component={CategoriesList}></Route>

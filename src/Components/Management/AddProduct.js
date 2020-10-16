@@ -1,9 +1,20 @@
-import React, { useEffect } from "react";
-import { Button, Form, Input, Menu } from "antd";
+import React from "react";
+import { Button, Form, Input, notification } from "antd";
 import axios from "axios";
 
-function AddProduct(props) {
+function AddProduct() {
 
+  const [form] = Form.useForm();
+
+  const openNotificationWithIcon = (type) => {
+    notification[type]({
+      message: 'Done',
+      description:
+        'Item has been added successfully.',
+      duration: 2,
+      placement: "top-left"
+    });
+  };
 
   const handleSubmit = (values) => {
     axios.post("http://localhost:3000/products", {
@@ -12,10 +23,15 @@ function AddProduct(props) {
       price: Number(values.price),
       image: values.image,
     });
+    form.resetFields();
+
+    openNotificationWithIcon('success');
+
   };
 
   return (
     <Form
+      form={form}
       name="form"
       onFinish={handleSubmit}
       style={{ zIndex: "1", margin: 50 }}
