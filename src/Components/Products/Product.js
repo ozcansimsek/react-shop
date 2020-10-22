@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { CartContext } from "./CartContext";
-import { Card, Button, Image } from "antd";
+import { CartContext } from "../Cart/CartContext";
+import { Card, Button } from "antd";
 
 const Product = (props) => {
   const [cart, setCart] = useContext(CartContext);
@@ -17,7 +17,7 @@ const Product = (props) => {
     <Card
       style={{ width: 175, margin: 15, textAlign: "center" }}
       hoverable
-      cover={<Image alt={props.description} src={props.image} />}
+      cover={<img alt={props.description} src={props.image} />}
     >
       <h3>
         {props.name} - {props.price}₺

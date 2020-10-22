@@ -8,12 +8,17 @@ import {
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 import SearchBox from "./SearchBox";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ProductList from "./ProductList";
-import CategoriesList from "./CategoriesList";
-import ManagementMain from "./Management";
-import Cart from "./Cart";
-import CartView from "./CartView";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
+import ProductList from "../Products";
+import CategoriesList from "../Categories";
+import ManagementMain from "../Management";
+import Cart from "../Cart/Cart";
+import CartView from "../Cart/CartView";
 
 const { SubMenu } = Menu;
 
@@ -40,9 +45,9 @@ function HeaderMenu() {
         <Menu.Item key="shop" icon={<AppstoreOutlined />}>
           <Link to="/shop">Shop</Link>
         </Menu.Item>
-          <Menu.Item key="category" icon={<SettingOutlined />}>
-              <Link to="/category">Categories</Link>
-          </Menu.Item>
+        <Menu.Item key="category" icon={<SettingOutlined />}>
+          <Link to="/category">Categories</Link>
+        </Menu.Item>
 
         <Menu.Item icon={<PlusOutlined />}>
           <Link to="/management">Management</Link>
