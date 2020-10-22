@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu } from "antd";
+import { Menu, Col, Row } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import {
   HomeOutlined,
@@ -8,12 +8,7 @@ import {
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 import SearchBox from "./SearchBox";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ProductList from "../Products";
 import CategoriesList from "../Categories";
 import ManagementMain from "../Management";
@@ -32,6 +27,9 @@ function HeaderMenu() {
 
   return (
     <Router>
+      <header>
+        <h1>React Shop</h1>
+      </header>
       <Menu
         theme="dark"
         onClick={handleClick}
