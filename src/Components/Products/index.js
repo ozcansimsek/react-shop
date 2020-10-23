@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Checkbox, List, Divider } from "antd";
+import { Row, Col, Checkbox, List, Divider, Slider, InputNumber } from "antd";
 import Product from "./Product";
 import axios from "axios";
-// import { List } from "antd/lib/form/Form";
 
 function ProductList(props) {
   const [productsData, setProductsData] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
-  const [selected, setSelected] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState([]);
+  // const [selectedPrice, setSelectedPrice] = useState([]);
+  const [state, setState] = useState({ inputValue: 10 });
 
   useEffect(() => {
     axios
@@ -29,51 +30,85 @@ function ProductList(props) {
 
   const onCheck = (e) => {
     if (e.target.checked) {
-      setSelected([...selected, e.target.name]);
+      setSelectedCategory([...selectedCategory, e.target.name]);
     } else {
-      let filteredArray = selected.filter((item) => item !== e.target.name);
-      setSelected(filteredArray);
+      let filteredArray = selectedCategory.filter(
+        (item) => item !== e.target.name
+      );
+      setSelectedCategory(filteredArray);
     }
   };
 
-  console.log(selected);
+  const onSliderChange = (value) => {
+    setState({
+      inputValue: value,
+    });
+  };
 
   return (
-    <Row>
-      <Col span={4}>
-        <Divider orientation="left">Categories</Divider>
-        <List size="small" bordered>
-          {categoriesData.map((item) => {
-            return (
-              <>
-                <List.Item>
-                  <Checkbox key={item.id} onChange={onCheck} name={item.name}>
-                    {item.name}
-                  </Checkbox>
-                </List.Item>
-              </>
-            );
-          })}
-        </List>
-      </Col>
-      <Col span={20}>
-        <Row className="products-list">
-          {productsData.map((item) => {
-            if(selected.includes(item.category) || selected.length === 0)
-            return (
-              <Product
-                key={item.id}
-                id={item.id}
-                image={item.image}
-                category={item.category}
-                name={item.productName}
-                price={item.price}
+    <>
+      <Row>
+        <Col span={4}>
+          <Divider orientation="left">Categories</Divider>
+          <List size="small" bordered style={{ userSelect: "none" }}>
+            {categoriesData.map((item) => {
+              return (
+                <>
+                  <List.Item>
+                    <Checkbox key={item.id} onChange={onCheck} name={item.name}>
+                      {item.name}
+                    </Checkbox>
+                  </List.Item>
+                </>
+              );
+            })}
+          </List>
+          <Divider orientation="left">Price</Divider>
+
+          <Row>
+            <Col span={12}>
+              <Slider
+                min={1}
+                max={10}
+                onChange={onSliderChange}
+                value={
+                  typeof state.inputValue === "number" ? state.inputValue : 0
+                }
               />
-            );
-          })}
-        </Row>
-      </Col>
-    </Row>
+            </Col>
+            <Col span={4}>
+              <InputNumber
+                min={1}
+                max={10}
+                style={{ margin: "0 16px" }}
+                value={state.inputValue}
+                onChange={onSliderChange}
+              />
+            </Col>
+          </Row>
+        </Col>
+        <Col span={20}>
+          <Row className="products-list">
+            {productsData.map((item) => {
+              if (
+                (item.price <= state.inputValue && selectedCategory.includes(item.category)) ||
+                (item.price <= state.inputValue && selectedCategory.length === 0)
+              )
+                return (
+                  <Product
+                    key={item.id}
+                    id={item.id}
+                    image={item.image}
+                    category={item.category}
+                    name={item.productName}
+                    price={item.price}
+                  />
+                );
+            })}
+          </Row>
+        </Col>
+      </Row>
+    </>
   );
 }
 

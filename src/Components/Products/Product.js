@@ -15,7 +15,7 @@ const Product = (props) => {
   };
   return (
     <Card
-      style={{ width: 175, margin: 15, textAlign: "center" }}
+      style={{ width: 175, height: 275, margin: 15, textAlign: "center" }}
       hoverable
       cover={<img alt={props.description} src={props.image} />}
     >
