@@ -51,6 +51,7 @@ function RemoveProduct() {
   };
 
   return (
+    <>
     <Form onFinish={handleSubmit}>
       <Select
         showSearch
@@ -69,6 +70,7 @@ function RemoveProduct() {
         Submit
       </Button>
     </Form>
+    </>
   );
 }
 

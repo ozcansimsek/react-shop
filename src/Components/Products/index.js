@@ -2,30 +2,30 @@ import React, { useEffect, useState } from "react";
 import { Row, Col, Checkbox, List, Divider, Slider, InputNumber } from "antd";
 import Product from "./Product";
 import axios from "axios";
+import { BrowserRouter as Link } from "react-router-dom";
 
 function ProductList(props) {
   const [productsData, setProductsData] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState([]);
-  // const [selectedPrice, setSelectedPrice] = useState([]);
   const [state, setState] = useState({ inputValue: 10 });
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/products`, {
-        params: { category: props.category },
-      })
-      .then((res) => {
-        const products = res.data;
-        setProductsData(products);
-      });
+    axios.get(`http://localhost:3000/products/`).then((res) => {
+      const products = res.data;
+      setProductsData(products);
+    });
 
     axios.get("http://localhost:3000/categories").then((res) => {
       const categories = res.data;
       setCategoriesData(categories);
     });
 
-    console.log("useffect runs");
+    if (props.location.pathname.split("/")[2])
+      setSelectedCategory([
+        ...selectedCategory,
+        props.location.pathname.split("/")[2],
+      ]);
   }, []);
 
   const onCheck = (e) => {
@@ -55,7 +55,14 @@ function ProductList(props) {
               return (
                 <>
                   <List.Item>
-                    <Checkbox key={item.id} onChange={onCheck} name={item.name}>
+                    <Checkbox
+                      key={item.id}
+                      defaultChecked={props.location.pathname.includes(
+                        item.name
+                      )}
+                      onChange={onCheck}
+                      name={item.name}
+                    >
                       {item.name}
                     </Checkbox>
                   </List.Item>
@@ -91,8 +98,10 @@ function ProductList(props) {
           <Row className="products-list">
             {productsData.map((item) => {
               if (
-                (item.price <= state.inputValue && selectedCategory.includes(item.category)) ||
-                (item.price <= state.inputValue && selectedCategory.length === 0)
+                (item.price <= state.inputValue &&
+                  selectedCategory.includes(item.category)) ||
+                (item.price <= state.inputValue &&
+                  selectedCategory.length === 0)
               )
                 return (
                   <Product

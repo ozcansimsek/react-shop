@@ -69,7 +69,7 @@ function EditProduct() {
   }, [handleChange]);
 
   return (
-    <React.Fragment>
+     <>
       <Select
         placeholder="Choose a product to edit"
         showSearch
@@ -139,7 +139,7 @@ function EditProduct() {
           Submit
         </Button>
       </Form>
-    </React.Fragment>
+    </>
   );
 }
 

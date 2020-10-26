@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, Col, Row } from "antd";
+import { Menu } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import {
   HomeOutlined,
@@ -14,6 +14,7 @@ import CategoriesList from "../Categories";
 import ManagementMain from "../Management";
 import Cart from "../Cart/Cart";
 import CartView from "../Cart/CartView";
+import Home from "../Home";
 
 const { SubMenu } = Menu;
 
@@ -26,7 +27,7 @@ function HeaderMenu() {
   };
 
   return (
-    <Router>
+    <>
       <header>
         <h1>React Shop</h1>
       </header>
@@ -65,12 +66,12 @@ function HeaderMenu() {
 
       <Switch>
         <Route exact path="/cart" component={CartView}></Route>
-        <Route path="/category" component={CategoriesList}></Route>
-        <Route exact path="/shop" component={ProductList}></Route>
+        <Route path="/category" component={CategoriesList} r></Route>
+        <Route path="/shop" component={ProductList}></Route>
         <Route exact path="/management" component={ManagementMain}></Route>
-        <Route path="/" component={CategoriesList}></Route>
+        <Route path="/" component={Home}></Route>
       </Switch>
-    </Router>
+    </>
   );
 }
 

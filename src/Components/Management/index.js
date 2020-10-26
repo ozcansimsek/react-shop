@@ -9,8 +9,8 @@ function AddItem(props) {
   const pathName = props.location.pathname;
 
   return (
-    <Router>
-      <React.Fragment>
+    <>
+      <Router>
         <Menu mode="horizontal">
           <Menu.Item>
             <Link to={`${pathName}/addproduct`}>Add Product</Link>
@@ -21,7 +21,6 @@ function AddItem(props) {
           <Menu.Item>
             <Link to={`${pathName}/editproduct`}>Edit Product</Link>
           </Menu.Item>
-          
         </Menu>
 
         <Switch>
@@ -43,8 +42,8 @@ function AddItem(props) {
             <br />
           </Route>
         </Switch>
-      </React.Fragment>
-    </Router>
+      </Router>
+    </>
   );
 }
 export default AddItem;

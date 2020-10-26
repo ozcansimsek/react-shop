@@ -30,6 +30,7 @@ function AddProduct() {
   };
 
   return (
+    <>
     <Form
       form={form}
       name="form"
@@ -77,6 +78,7 @@ function AddProduct() {
         Submit
       </Button>
     </Form>
+    </>
   );
 }
 
